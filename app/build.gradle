@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
         applicationId "org.apertium.android"
-        minSdkVersion 7
-        targetSdkVersion 18
+        minSdkVersion 14
+        targetSdkVersion 27
     }
 
     buildTypes {
@@ -19,6 +19,6 @@ android {
 }
 
 dependencies {
-    compile files('libs/bugsense3.0.7.jar')
-    compile files('libs/lttoolbox.jar')
+    implementation files('libs/bugsense3.0.7.jar')
+    implementation files('libs/lttoolbox.jar')
 }
