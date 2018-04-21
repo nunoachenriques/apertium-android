@@ -2,7 +2,7 @@ apertium-af-nl	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/aper
 apertium-ca-it	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-ca-it/apertium-ca-it.jar	file:apertium-ca-it-0.1.0.tar.gz	ca-it, it-ca
 apertium-en-ca	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-en-ca/apertium-en-ca.jar	svn:rev61328	en-ca, ca-en, ca-en_US
 apertium-en-es	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-en-es/apertium-en-es.jar	svn:rev64901	en-es, es-en, es-en_US
-apertium-en-gl	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-en-gl/apertium-en-gl.jar	svn:rev57551	en-gl, gl-en
+apertium-en-gl	https://sourceforge.net/p/apertium/svn/84368/tree/builds/apertium-en-gl/apertium-en-gl.jar?format=raw	svn:rev57551	en-gl, gl-en
 apertium-eo-ca	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-eo-ca/apertium-eo-ca.jar	svn:rev60655	ca-eo, ca-eo-translit
 apertium-eo-en	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-eo-en/apertium-eo-en.jar	svn:rev63833	eo-en, en-eo
 apertium-eo-es	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-eo-es/apertium-eo-es.jar	file:apertium-eo-es-1.0.0.tar.gz	es-eo, es-eo-translit
@@ -20,6 +20,6 @@ apertium-ht-en	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/aper
 apertium-oc-ca	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-oc-ca/apertium-oc-ca.jar	file:apertium-oc-ca-1.0.6.tar.gz	oc-ca, ca-oc, oc_aran-ca, ca-oc_aran
 apertium-oc-es	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-oc-es/apertium-oc-es.jar	file:apertium-oc-es-1.0.6.tar.gz	oc-es, es-oc, oc_aran-es, es-oc_aran
 apertium-pt-ca	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-pt-ca/apertium-pt-ca.jar	svn:rev51165	pt-ca, ca-pt
-apertium-pt-gl	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-pt-gl/apertium-pt-gl.jar	svn:rev57551	pt-gl, gl-pt
+apertium-pt-gl	https://sourceforge.net/p/apertium/svn/41935/tree//builds/apertium-pt-gl/apertium-pt-gl.jar?format=raw	svn:rev57551	pt-gl, gl-pt
 apertium-spa-arg	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-spa-arg/apertium-spa-arg.jar	svn:rev64399	spa-arg, arg-spa
 apertium-sv-da	https://apertium.svn.sourceforge.net/svnroot/apertium/builds/apertium-sv-da/apertium-sv-da.jar	file:apertium-sv-da-0.5.0.tar.gz	sv-da

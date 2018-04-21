@@ -16,11 +16,11 @@ public class LanguageTitles {
       id = id.substring(0, id.length() - 5);
     else if (id.endsWith(".jar") || id.endsWith(".zip"))
       id = id.substring(0, id.length() - 4);
-    ArrayList<String[]> unidirectionalPairs = new ArrayList<String[]>();
-    ArrayList<String[]> bidirectionalPairs = new ArrayList<String[]>();
+    ArrayList<String[]> unidirectionalPairs = new ArrayList<>();
+    ArrayList<String[]> bidirectionalPairs = new ArrayList<>();
     String pairs[] = id.split(",");
-    for (int i = 0; i < pairs.length; i++) {
-      String pair[] = pairs[i].split("-");
+    for (String pair1 : pairs) {
+      String pair[] = pair1.split("-");
       if (pair.length < 2 || pairs.length > 1 && (pair.length > 2)) //  || pair[0].contains("_") || pair[1].contains("_")
         continue;
       for (int j = 0; j < pair.length; j++)
@@ -95,7 +95,7 @@ public class LanguageTitles {
   private static HashMap<String, String> codeToTitle;
 
   private static void initCodeToTitle() {
-    codeToTitle = new HashMap<String, String>();
+    codeToTitle = new HashMap<>();
 
     //Trunk
     codeToTitle.put("ast", "Asturian");
@@ -110,7 +110,6 @@ public class LanguageTitles {
     codeToTitle.put("eus", "Basque");
     codeToTitle.put("fin", "Finnish");
     codeToTitle.put("udm", "Udmurt");
-    codeToTitle.put("kaz", "Kazakh");
     codeToTitle.put("tat", "Tatar");
     codeToTitle.put("kpv", "Komi-Zyrian");
     codeToTitle.put("mhr", "Eastern Mari");

@@ -67,14 +67,14 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
    */
   private static class Data {
     InstallActivity activity;
-    ArrayList<String> packages = new ArrayList<String>();
-    HashSet<String> installedPackages = new HashSet<String>();
-    HashSet<String> updatablePackages = new HashSet<String>();
-    HashSet<String> updatedPackages = new HashSet<String>();
-    HashSet<String> packagesToInstall = new HashSet<String>();
-    HashSet<String> packagesToUninstall = new HashSet<String>();
-    HashMap<String, String> packageToTitle = new HashMap<String, String>();
-    HashMap<String, URL> packageToURL = new HashMap<String, URL>();
+    ArrayList<String> packages = new ArrayList<>();
+    HashSet<String> installedPackages = new HashSet<>();
+    HashSet<String> updatablePackages = new HashSet<>();
+    HashSet<String> updatedPackages = new HashSet<>();
+    HashSet<String> packagesToInstall = new HashSet<>();
+    HashSet<String> packagesToUninstall = new HashSet<>();
+    HashMap<String, String> packageToTitle = new HashMap<>();
+    HashMap<String, URL> packageToURL = new HashMap<>();
     File cachedRepoFile;
     RepoAsyncTask repoTask;
     InstallRemoveAsyncTask installTask;
@@ -95,11 +95,11 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
     super.onCreate(savedInstanceState);
     requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
     setContentView(R.layout.simple_install);
-    applyButton = (Button) findViewById(R.id.applyButton);
+    applyButton = findViewById(R.id.applyButton);
     applyButton.setOnClickListener(this);
-    progressBar = (ProgressBar) findViewById(R.id.progressBar);
-    progressTextView = (TextView) findViewById(R.id.progressTextView);
-    listView = (ListView) findViewById(R.id.listView1);
+    progressBar = findViewById(R.id.progressBar);
+    progressTextView = findViewById(R.id.progressTextView);
+    listView = findViewById(R.id.listView1);
     listView.setOnItemClickListener(this);
     listView.setAdapter(adapter);
 
@@ -155,9 +155,9 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
   }
 
   private static void initPackages(Data d, InputStream inputStream, boolean useNetwork) throws IOException {
-    ArrayList<String> packages = new ArrayList<String>();
+    ArrayList<String> packages = new ArrayList<>();
     // Get a copy of the list of installed packages, as we modify it below
-    HashSet<String> installedPackages = new HashSet<String>(App.apertiumInstallation.modeToPackage.values());
+    HashSet<String> installedPackages = new HashSet<>(App.apertiumInstallation.modeToPackage.values());
 
     BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
     String line;
@@ -264,13 +264,7 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
     }
 
     private boolean isChecked(String pkg) {
-      if (d.installedPackages.contains(pkg) && !d.packagesToUninstall.contains(pkg)) {
-        return true;
-      }
-      if (d.packagesToInstall.contains(pkg)) {
-        return true;
-      }
-      return false;
+      return d.installedPackages.contains(pkg) && !d.packagesToUninstall.contains(pkg) || d.packagesToInstall.contains(pkg);
     }
 
     @Override
@@ -278,9 +272,9 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
       if (v == null) {
         v = getLayoutInflater().inflate(R.layout.simple_install_elem, null);
       }
-      CheckBox checkBox = (CheckBox) v.findViewById(R.id.checkBox);
-      TextView name = (TextView) v.findViewById(R.id.name);
-      TextView status = (TextView) v.findViewById(R.id.status);
+      CheckBox checkBox = v.findViewById(R.id.checkBox);
+      TextView name = v.findViewById(R.id.name);
+      TextView status = v.findViewById(R.id.status);
 
       String pkg = d.packages.get(row);
       String pkgTitle = d.packageToTitle.get(pkg).replace(",","<br/>\n");
@@ -318,7 +312,7 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
       }
       return v;
     }
-  };
+  }
 
   public void onItemClick(AdapterView<?> arg0, View arg1, int row, long arg3) {
     String pkg = d.packages.get(row);
@@ -338,7 +332,7 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
         }
       }
     } else {
-      // An updateable package - there are 3 states: untouched, update, uninstall
+      // An updatable package - there are 3 states: untouched, update, uninstall
       if (d.packagesToInstall.contains(pkg)) {
         // update -> uninstall
         d.packagesToInstall.remove(pkg);
@@ -364,7 +358,7 @@ public class InstallActivity extends Activity implements OnItemClickListener, On
       d.progressMax = d.packagesToInstall.size() * 100;
 
       int packageNo = 0;
-      for (String pkg : new HashSet<String>(d.packagesToInstall)) { // Avoid ConcurrentModificationException
+      for (String pkg : new HashSet<>(d.packagesToInstall)) { // Avoid ConcurrentModificationException
         if (isCancelled()) break;
         try {
           publishProgress(d.activity.getString(R.string.downloading) + " " + pkg + "...");
